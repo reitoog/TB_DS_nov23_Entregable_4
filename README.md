@@ -10,6 +10,8 @@ Tiene 3 ramas (branches):
 El modelo que pondremos en producción será una regresión lineal sobre el dataset de Kaggle de videojuegos que se puede encontrar en este enlace:
 https://www.kaggle.com/datasets/gregorut/videogamesales
 
+En la rama main se han subido unos archivos iniciales: el csv del dataset y un notebook donde un miembro del equipo de trabajo hizo pruebas con él.
+
 ### Flujo de trabajo con Git/GitHub:
 
 1) Equipos A (Flask), B (Git), C (Cloud) y D (PySpark/Database) - tenéis que hacer un fork a este repositorio en vuestro GitHub (designar uno por cada equipo - puede ser el del manager del equipo). Así vamos a tener 4 forks (o repos forkeados), que son copias online del respositorio principal.
