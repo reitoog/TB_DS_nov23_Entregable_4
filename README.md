@@ -30,6 +30,6 @@ Cada miembro del equipo trabaja en su parte del proyecto en su ordenador (**en l
 5) Cuando dan el trabajo por hecho, y tendrán todo actualizado en el fork del miembro designado, se hace un pull request desde este fork al repositorio principal. Ese request lo aprobará/revisará el manager de Git (= desarrollador senior), que está escribiendo estás lineas ahora mismo :) El trabajo de cada uno de los equipos se mergeará en la rama Develop del repositorio principal.
 
 ### ¡ Actualización importante 2024.03.11 !
-##### Solo el equipo A (Flask) necesita subir/modificar archivos a GitHub, ya que lo estamos usado exclusivamente para la parte de código y no para almacenar datos... Los otros equípos (B - Git, C - Cloud, D - PySpark/Databricks) basta con que hagan un fork por parte del miembro designado y creen una rama llamada "Feature [X]" (X siendo la letra de su equipo) en este fork.
+#### Solo el equipo A (Flask) necesita subir/modificar archivos a GitHub, ya que lo estamos usado exclusivamente para la parte de código y no para almacenar datos... Los otros equípos (B - Git, C - Cloud, D - PySpark/Databricks) basta con que hagan un fork por parte del miembro designado y creen una rama llamada "Feature [X]" (X siendo la letra de su equipo) en este fork.
 
 
