@@ -51,24 +51,25 @@ def health():
 
 """
 La petición sería:
-http://127.0.0.1:5000/api/v1/adv_model/predict?param1=180&param2=15&param3=60    #Esta ruta la definimos nosotros así
+http://127.0.0.1:5000/api/v1/adv_model/predict?param1=180&param2=15&param3=60&param4=90    #Esta ruta la definimos nosotros así
 """
 
 @app.route('/api/v1/adv_model/predict', methods = ['GET'])  #['GET']: Aquí coge los argumentos por param1,param2 y param3 por URL con 'request.arg'
 def predict():
     args = request.args
-    if 'param1' in args and 'param2' in args and 'param3' in args:
-        with open('C:\Users\reito\Documents\GitHub\77_Miss_Cosas\Flasko\Flasko_v2\elmodeloguardado.model','rb') as archivo_entrada : 
+    if 'param1' in args and 'param2' in args and 'param3' in args and 'param4' in args:
+        with open('/home/ubuntu/prod/endpoint/lr_model.pkl','rb') as archivo_entrada : 
             model = pickle.load(archivo_entrada) # Modelo cargado
         
         parametro1 = args.get('param1', None) #Coge lo que le pasas por el parametro 1 y sino coge 'None'
         parametro2 = args.get('param2', None)
         parametro3 = args.get('param3', None)
+        parametro4 = args.get('param4', None)
 
-        if parametro1 is None or parametro2 is None or parametro3 is None:
+        if parametro1 is None or parametro2 is None or parametro3 is None or parametro4 is None:
             return "Error. Args empty"
         else:
-            predictions = model.predict([[float(parametro1), float(parametro2), float(parametro3)]])
+            predictions = model.predict([[float(parametro1), float(parametro2), float(parametro3), float(parametro4)]])
             return jsonify({"predictions": list(predictions)})
     else:
         return "Error in args"
@@ -86,7 +87,7 @@ def makecalc():
     return jsonify(prediction)
 
 
-modelfile = r'C:\Users\reito\Documents\GitHub\77_Miss_Cosas\Flasko\Flasko_v2\elmodeloguardado.model' #ruta a donde tenemos el modelo guardado (Nube amazon?)
+modelfile = r'/home/ubuntu/prod/endpoint/lr_model.pkl' #ruta a donde tenemos el modelo guardado (Nube amazon?)
 model = pickle.load(open(modelfile, 'rb'))
 
 
